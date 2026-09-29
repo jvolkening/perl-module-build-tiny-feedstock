@@ -11,7 +11,6 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  noarch: generic
   number: 1
   run_exports:
     weak:
@@ -27,6 +26,9 @@ requirements:
     - perl-extutils-helpers
   run:
     - perl
+    - perl-extutils-installpaths
+    - perl-extutils-config
+    - perl-extutils-helpers
 
 test:
   imports:
@@ -35,9 +37,7 @@ test:
 about:
   home: https://metacpan.org/pod/Module::Build::Tiny
   license: GPL-1.0-or-later OR Artistic-1.0-Perl
-  license_file:
-    - {{ environ["PREFIX"] }}/lib/perl5/core_perl/pod/perlartistic.pod
-    - {{ environ["PREFIX"] }}/lib/perl5/core_perl/pod/perlgpl.pod
+  license_file: LICENSE
   summary: 'A tiny replacement for Module::Build'
 
 extra:
